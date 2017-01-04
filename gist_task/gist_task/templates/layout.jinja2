@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gist Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href= "{{ request.static_path('learning_journal:static/normalize.css') }}">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal:static/skeleton.css') }}">
+    <link rel="stylesheet" href="{{ request.static_path('learning_journal:static/style.css') }}">
+     --><!-- <link rel="stylesheet" href="{{ request.static_path('learning_journal:static/theme.css') }}"> -->
+</head>
+<body>
+  <div>
+    <div>
+      <header>
+        <h3 class="title">Gist Task</h3>
+        <nav>
+          <ul>
+            <li><a href="{{ request.route_url('home') }}">Home</a></li>
+            {% if request.authenticated_userid %}
+              <li><a href="{{ request.route_url('detail') }}">Profile</a></li>
+              <li><a href="{{ request.route_url('logout') }}">Logout</a></li>
+            {% else %}
+              <li><a href="{{ request.route_url('create') }}">Register</a></li>
+              <li><a href="{{ request.route_url('login') }}">Login</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </div>
+    <article>    
+        {% block body %}
+        {% endblock %}
+    </article>    
+</body>
+</html>

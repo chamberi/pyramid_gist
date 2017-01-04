@@ -1,0 +1,32 @@
+{% extends "layout.jinja2" %}
+
+{% block body %}
+<div class="content">
+    {% if data %}
+    <h1>{{ data.title }}</h1>
+    {% endif %}
+    <form action="" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ request.session.get_csrf_token() }}" />
+
+        <label for="title">First Name: </label><br/>
+        <input type="text" name="fname"/><br/>
+
+        <label for="title">Last Name: </label><br/>
+        <input type="text" name="lname"/><br/>
+        
+        <label for="title">Username: </label><br/>
+        <input type="text" name="uname"/><br/>
+        
+        <label for="title">Password: </label><br/>
+        <input type="text" name="pword"/><br/>
+        
+        <label for="title">Email: </label><br/>
+        <input type="text" name="email_add"/><br/>
+        
+        <label for="title">Favorite Food: </label><br/>
+        <input type="text" name="food"/><br/>
+        
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+{% endblock %}

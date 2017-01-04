@@ -1,0 +1,3 @@
+[run]
+source = gist_task
+omit = gist_task/test*
